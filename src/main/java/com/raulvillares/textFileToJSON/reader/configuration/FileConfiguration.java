@@ -2,6 +2,7 @@ package com.raulvillares.textFileToJSON.reader.configuration;
 
 import java.util.LinkedList;
 import java.util.List;
+import static javax.json.JsonValue.ValueType;
 
 public abstract class FileConfiguration {
 	
@@ -22,6 +23,6 @@ public abstract class FileConfiguration {
 	
 	public String getFileName() { return this.fileName; }
 	public String getFieldName(int fieldIndex) { return this.fields.get(fieldIndex).getName(); }
-	public Type getFieldType(int fieldIndex) { return this.fields.get(fieldIndex).getType(); }
+	public ValueType getFieldType(int fieldIndex) { return this.fields.get(fieldIndex).getType(); }
 
 }

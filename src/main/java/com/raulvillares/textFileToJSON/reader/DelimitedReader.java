@@ -5,7 +5,7 @@ import java.io.*;
 import javax.json.*;
 
 import com.raulvillares.textFileToJSON.reader.configuration.DelimitedFileConfiguration;
-import com.raulvillares.textFileToJSON.reader.configuration.Type;
+import static javax.json.JsonValue.ValueType;
 
 public class DelimitedReader extends Reader {
 	
@@ -52,7 +52,7 @@ public class DelimitedReader extends Reader {
 				String[] words = line.split(this.configuration.getDelimiter());
 				int fieldIndex = 0;
 				for(String word : words) {
-					if (this.configuration.getFieldType(fieldIndex) == Type.NUMBER) {
+					if (this.configuration.getFieldType(fieldIndex) == ValueType.NUMBER) {
 						int value = Integer.valueOf(word);
 						objectBuilder.add(this.configuration.getFieldName(fieldIndex), value);
 					} else { 

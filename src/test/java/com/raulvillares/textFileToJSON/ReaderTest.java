@@ -5,13 +5,13 @@ import static org.junit.Assert.*;
 import javax.json.Json;
 import javax.json.JsonArray;
 import javax.json.JsonObject;
+import static javax.json.JsonValue.ValueType;
 
 import org.junit.Test;
 
 import com.raulvillares.textFileToJSON.reader.DelimitedReader;
 import com.raulvillares.textFileToJSON.reader.configuration.DelimitedFileConfiguration;
 import com.raulvillares.textFileToJSON.reader.configuration.FieldConfiguration;
-import com.raulvillares.textFileToJSON.reader.configuration.Type;
 
 public class ReaderTest {
 
@@ -35,8 +35,8 @@ public class ReaderTest {
 	@Test
 	public void DelimitedIntegersFile() {
 		DelimitedFileConfiguration delimitedFileConfig = new DelimitedFileConfiguration("DelimitedIntegersTest.txt");
-		FieldConfiguration fieldConfig1 = new FieldConfiguration("year", Type.NUMBER);
-		FieldConfiguration fieldConfig2 = new FieldConfiguration("worldDeathsByEarthQuake", Type.NUMBER);
+		FieldConfiguration fieldConfig1 = new FieldConfiguration("year", ValueType.NUMBER);
+		FieldConfiguration fieldConfig2 = new FieldConfiguration("worldDeathsByEarthQuake", ValueType.NUMBER);
 		delimitedFileConfig.addField(0, fieldConfig1);
 		delimitedFileConfig.addField(1, fieldConfig2);
 		DelimitedReader reader = new DelimitedReader(delimitedFileConfig);

@@ -1,19 +1,21 @@
 package com.raulvillares.textFileToJSON.reader.configuration;
 
+import static javax.json.JsonValue.ValueType;
+
 public class FieldConfiguration {
 	private String name;
-	private Type type;
+	private ValueType type;
 	
 	public FieldConfiguration(String name) {
 		this.name = name;
-		this.type = Type.STRING;
+		this.type = ValueType.STRING;
 	}
 	
-	public FieldConfiguration(String name, Type type) {
+	public FieldConfiguration(String name, ValueType type) {
 		this.name = name;
 		this.type = type;
 	}
 	
 	public String getName() { return this.name; }
-	public Type getType() { return this.type; }
+	public ValueType getType() { return this.type; }
 }
