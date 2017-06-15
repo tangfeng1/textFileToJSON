@@ -22,5 +22,6 @@ public abstract class FileConfiguration {
 	
 	public String getFileName() { return this.fileName; }
 	public String getFieldName(int fieldIndex) { return this.fields.get(fieldIndex).getName(); }
+	public Type getFieldType(int fieldIndex) { return this.fields.get(fieldIndex).getType(); }
 
 }
